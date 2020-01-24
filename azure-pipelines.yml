@@ -25,6 +25,6 @@ steps:
 - task: DotNetCoreCLI@2
   displayName: Build
   inputs:
-    projects: '$(solution)'
+    projects: **/*.csproj
     arguments: '$(buildConfiguration)'
   continueOnError: true
