@@ -1,0 +1,26 @@
+SET dotnet="C:\Program Files\dotnet\dotnet.exe"  
+SET opencover="C:\Program Files (x86)\OpenCover\OpenCover.Console.exe"
+SET reportgenerator="C:\Program Files (x86)\OpenCover\ReportGenerator\ReportGenerator.exe"
+
+SET targetargs="test"  
+SET filter="+[*]NAMESPACE.* -[*.Test]* -[xunit.*]* -[FluentValidation]*"  
+SET coveragefile=Coverage.xml  
+SET coveragedir=Coverage
+
+REM Run code coverage analysis  
+%opencover% -oldStyle -register:user -target:%dotnet% -output:%coveragefile% -targetargs:%targetargs% -filter:%filter% -skipautoprops -hideskipped:All
+
+REM Generate the report  
+%reportgenerator% -targetdir:%coveragedir% -reporttypes:Html;Badges -reports:%coveragefile% -verbosity:Error
+
+REM Open the report  
+start "report" "%coveragedir%\index.htm"
+
+c:\progra~1\dotnet\dotnet restore
+c:\progra~1\dotnet\dotnet build
+c:\progra~1\dotnet\dotnet test .\UnitTestProject1 --logger:trx;LogFileName=c:\progra~2\Jenkins\workspace\SimpleMath\TestResults\SimpleMathUnitResults.trx
+c:\progra~1\dotnet\dotnet test .\XUnitTestProject1 --logger:trx;LogFileName=c:\progra~2\Jenkins\workspace\SimpleMath\TestResults\SimpleMathXunitResults.trx
+
+"C:\Progra~1\OpenCover\OpenCover.Console.exe" -oldstyle -register:user -target:"C:\Program Files\dotnet\dotnet.exe" -output:"Coverage.xml" -targetargs:"test" -skipautoprops -hideskipped:All
+
+C:\Progra~1\ReportGenerator\ReportGenerator.exe -targetdir:"Coverage" -reporttypes:Html;Badges -reports:"Coverage.xml" -verbosity:Error

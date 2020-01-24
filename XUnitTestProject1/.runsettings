@@ -1,0 +1,60 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<RunSettings>
+  <!-- Configurations that affect the Test Framework -->
+  <RunConfiguration>
+    <!-- 1. Test related settings -->
+    <!-- [x86] | x64: architecture of test host -->
+    <TargetPlatform>x86</TargetPlatform>
+
+    <!-- Framework35 | [Framework40] | Framework45 -->
+    <TargetFrameworkVersion>.NETCoreApp, Version=v2.0</TargetFrameworkVersion>
+
+    <!-- Path to Test Adapters -->
+    <TestAdaptersPaths>%SystemDrive%\Temp\foo;%SystemDrive%\Temp\bar</TestAdaptersPaths>
+
+    <!-- Path relative to solution directory -->
+    <ResultsDirectory>.\TestResults</ResultsDirectory>
+    <SolutionDirectory>.\TestResults</SolutionDirectory>
+
+    <!-- CPU cores to use for parallel runs -->
+    <MaxCpuCount>2</MaxCpuCount>
+
+    <!-- Specify timeout in milliseconds. A valid value should be >= 0. If 0, timeout will be infinity-->
+    <TestSessionTimeout>10000</TestSessionTimeout>
+
+    <!-- STA | MTA  default is STA for .NET Full and MTA for .NET Core-->
+    <ExecutionThreadApartmentState>STA</ExecutionThreadApartmentState>
+
+    <!-- 2. Hints to adapters to behave in a specific way -->
+    <DesignMode>false</DesignMode>
+    <DisableParallelization>false</DisableParallelization>
+    <DisableAppDomain>false</DisableAppDomain>
+    <CollectSourceInformation>true</CollectSourceInformation>
+
+    <!-- 3. Runner related configuration -->
+    <BatchSize>10</BatchSize>
+  </RunConfiguration>
+
+  <!-- Configurations for data collectors -->
+  <DataCollectionRunSettings>
+    <DataCollectors>
+      <DataCollector friendlyName="Code Coverage" uri="datacollector://Microsoft/CodeCoverage/2.0">
+        <Configuration>
+          <CodeCoverage>
+            <ModulePaths>
+              <Exclude>
+                <ModulePath>.*CPPUnitTestFramework.*</ModulePath>
+              </Exclude>
+            </ModulePaths>
+
+            <!-- We recommend you do not change the following values: -->
+            <UseVerifiableInstrumentation>True</UseVerifiableInstrumentation>
+            <AllowLowIntegrityProcesses>True</AllowLowIntegrityProcesses>
+            <CollectFromChildProcesses>True</CollectFromChildProcesses>
+            <CollectAspDotNet>False</CollectAspDotNet>
+          </CodeCoverage>
+        </Configuration>
+      </DataCollector>
+
+    </DataCollectors>
+  </DataCollectionRunSettings>
