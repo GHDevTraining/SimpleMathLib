@@ -14,6 +14,13 @@ namespace SimpleMathLib
             return a + b;
         }
 
+        // Add two doubles together
+        public double Add(double a, double b)
+        {
+            if (a < 1)
+                return 0;
+            return a + b;
+        }
         // Subtract two numbers
         public int Subtract(int a, int b)
         {
