@@ -1,5 +1,7 @@
 [![Build Status](https://dev.azure.com/isvalmsig/TechTalkAzureDevOpsGitHub/_apis/build/status/aspdotnetcore%20-%20TeamBuild-import?branchName=master)](https://dev.azure.com/isvalmsig/TechTalkAzureDevOpsGitHub/_build/latest?definitionId=82&branchName=master)
 
+[![Board Status](https://dev.azure.com/isvalmsig/68ec064c-2d1d-4f06-9368-0bed046cc0e8/cf0e25b7-62d7-4d02-89c2-86ffdddc4f9e/_apis/work/boardbadge/e045d3d3-7055-44b1-88a6-d58a828bfac3)](https://dev.azure.com/isvalmsig/68ec064c-2d1d-4f06-9368-0bed046cc0e8/_boards/board/t/cf0e25b7-62d7-4d02-89c2-86ffdddc4f9e/Microsoft.RequirementCategory/)
+
 # Introduction 
 TODO: Give a short introduction of your project. Let this section explain the objectives or the motivation behind this project. 
 
