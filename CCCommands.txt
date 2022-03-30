@@ -25,3 +25,4 @@ c:\progra~1\dotnet\dotnet test .\XUnitTestProject1 --logger:trx;LogFileName=c:\p
 
 C:\Progra~1\ReportGenerator\ReportGenerator.exe -targetdir:"Coverage" -reporttypes:Html;Badges -reports:"Coverage.xml" -verbosity:Error
 
+ 
